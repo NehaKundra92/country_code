@@ -5,21 +5,20 @@ from tinydb import TinyDB, Query
 import json
 
 
-
+## DB lookup
 def get_country_name(code) :
     db = TinyDB('data.json')
     country = Query()
     doc = db.get( country['code'] == code)
-    #print(doc)
     return doc
 
 def get_country_code(name) :
     db = TinyDB('data.json')
     country = Query()
     doc = db.get( country['name'] == name)
-    #print(doc)
     return doc
 
+## Flask API
 
 app = flask.Flask(__name__)
 api = Api(app)
