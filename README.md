@@ -25,16 +25,24 @@ This repository contains **Dockerfile** of [app to check country code] for [Dock
     4. curl localhost/diag
     5. curl localhost/convert/India
     6. curl localhost/convert_name/AU
+    
+    
 
-#### Data Source
+### Data Source
 
-1. [TinyDB](https://tinydb.readthedocs.io/en/latest/) is used as infileDB
+   1. [TinyDB](https://tinydb.readthedocs.io/en/latest/) is used as infileDB
 
 
 #### APIs exposed
 
-1. /health: checks the health of application
-2. /diag:  Raw data used
-3. /convert/<string:name>: This converts the country name to country code
-4. /convert_name/<string:code>: This converts the country code to country name
+   1. /health: checks the health of application
+   2. /diag:  Raw data used
+   3. /convert/<string:name>: This converts the country name to country code
+   4. /convert_name/<string:code>: This converts the country code to country name
 
+
+
+
+
+
+![Example](https://github.com/NehaKundra92/country_code/blob/master/curl.png?raw=true "Example")
