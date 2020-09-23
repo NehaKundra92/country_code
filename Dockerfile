@@ -3,4 +3,5 @@ RUN mkdir /opt/countrycode
 ADD craft_demo /opt/countrycode
 RUN chmod -R 777 /opt/countrycode
 RUN pip3.8 install -r  /opt/countrycode/requirment.txt
+RUN python3.8 /opt/countrycode/get_data.py
 cmd python3.8 /opt/countrycode/lookup.py
