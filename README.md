@@ -1,6 +1,6 @@
 ## Get Country code 
 
-This repository contains **Dockerfile** of [app to check country code] for [Docker](https://www.docker.com/)'s.
+This repository contains **[Dockerfile](https://github.com/NehaKundra92/country_code/blob/master/Dockerfile)** of [CountryCodeLookUp](https://github.com/NehaKundra92/country_code/blob/master/code/lookup.py).
 
 
 ### Base Docker Image
