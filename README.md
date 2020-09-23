@@ -21,7 +21,10 @@ This repository contains **Dockerfile** of [app to check country code] for [Dock
 
     1. docker build -t countrycode --no-cache .
     2. docker run -d -p  80:5000 countrycode
-    
+    3. curl localhost/health
+    4. curl localhost/diag
+    5. curl localhost/convert/India
+    6. curl localhost/convert_name/AU
 
 #### Data Source
 
