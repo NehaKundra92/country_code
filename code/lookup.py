@@ -1,10 +1,11 @@
-
+import os
 from flask_restful import Api, Resource
 import flask
 from tinydb import TinyDB, Query
 import json
-
-
+import get_data
+db = TinyDB('data.json')
+get_data.get_data(db)
 ## DB lookup
 def get_country_name(code) :
     db = TinyDB('data.json')
@@ -45,7 +46,9 @@ class Health(Resource):
 
 class Diag(Resource):
     def get(self):
-        with open('data_dump.json', 'r') as f:
+        THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+        my_file = os.path.join(THIS_FOLDER, 'data_dump.json')
+        with open(my_file, 'r') as f:
             response=json.loads(f.read())
         return response
 
