@@ -60,5 +60,5 @@ api.add_resource(CountryName, "/convert_name/<string:code>")
 
 
 if __name__ == '__main__' :
-    app.run(debug=True, host="0.0.0.0")
+    app.run( host="0.0.0.0")
 
