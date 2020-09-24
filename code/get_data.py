@@ -4,25 +4,15 @@ import json
 import os
 
 
-def dataApi():
+def dataApiStatus():
     URL = "https://www.travel-advisory.info/api"
     res = requests.get(URL)
-
-    ''' Dump data to data_dump.json
-    result = res.json()
-    'with open('data_dump.json', 'w') as f :
-        json.dump(result, f)
-
-    '''
-    return res.status_code
+    return res
 
 def get_data(db):
-    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-    my_file = os.path.join(THIS_FOLDER, 'data_dump.json')
-    with open(my_file, 'r') as file :
-        data = json.loads(file.read())
-
-    for i in data['data'].items() :
+    res=dataApiStatus()
+    result = res.json()
+    for i in res['data'].items() :
 
         country_data = {}
         country_data['name'] = i[1]['name']
@@ -33,12 +23,6 @@ if __name__ == '__main__' :
     db = TinyDB('data.json')
     table = db.table('_default', cache_size=None)
     get_data(db)
-
-
-
-
-
-
 
 
 
