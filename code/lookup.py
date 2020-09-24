@@ -46,12 +46,11 @@ class Health(Resource):
 
 class Diag(Resource):
     def get(self):
-        THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-        my_file = os.path.join(THIS_FOLDER, 'data_dump.json')
-        with open(my_file, 'r') as f:
-            response=json.loads(f.read())
-        return response
-
+        res=get_data.dataApi()
+        if res==200:
+            return {"api_status":200, "status":"ok"}
+        else:
+            return {"api_status": res, "status": "failed"}
 
 api.add_resource(Health, "/health")
 api.add_resource(Diag, "/diag")

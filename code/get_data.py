@@ -4,13 +4,17 @@ import json
 import os
 
 
-'''
-URL="https://www.travel-advisory.info/api"
-res= requests.get(URL)
-result=res.json()
-with open ('data_dump.json', 'w') as f:
-    json.dump(result, f)
+def dataApi():
+    URL = "https://www.travel-advisory.info/api"
+    res = requests.get(URL)
+
+    ''' Dump data to data_dump.json
+    result = res.json()
+    'with open('data_dump.json', 'w') as f :
+        json.dump(result, f)
+
     '''
+    return res.status_code
 
 def get_data(db):
     THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
