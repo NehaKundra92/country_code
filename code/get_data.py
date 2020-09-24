@@ -12,7 +12,7 @@ def dataApiStatus():
 def get_data(db):
     res=dataApiStatus()
     result = res.json()
-    for i in res['data'].items() :
+    for i in result['data'].items() :
 
         country_data = {}
         country_data['name'] = i[1]['name']
