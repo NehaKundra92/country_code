@@ -34,7 +34,7 @@ This repository contains **[Dockerfile](https://github.com/NehaKundra92/country_
 #### APIs exposed
 ```
    1. /health: checks the health of application
-   2. /diag:  Raw data used
+   2. /diag:  Source API status
    3. /convert/<string:name>: This converts the country name to country code
    4. /convert_name/<string:code>: This converts the country code to country name
    
