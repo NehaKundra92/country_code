@@ -22,7 +22,6 @@ def get_data(db):
 if __name__ == '__main__' :
     db = TinyDB('data.json')
     table = db.table('_default', cache_size=None)
-    get_data(db)
 
 
 

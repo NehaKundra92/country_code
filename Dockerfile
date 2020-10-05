@@ -4,6 +4,5 @@ ADD code/requirment.txt /opt/countrycode
 ADD code/lookup.py /opt/countrycode
 ADD code/get_data.py /opt/countrycode
 RUN chmod -R 777 /opt/countrycode/
-RUN ls -lhrt  /opt/countrycode
 RUN pip3.8 install -r  /opt/countrycode/requirment.txt
 cmd python3.8 /opt/countrycode/lookup.py

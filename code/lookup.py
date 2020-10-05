@@ -5,6 +5,7 @@ import get_data
 
 db = TinyDB('data.json')
 get_data.get_data(db)
+table=db.table('_default', cache_size=None)
 
 
 ## DB lookup
@@ -30,14 +31,22 @@ api = Api(app)
 
 class CountryCode(Resource) :
     def get(self, name) :
-        response = get_country_code(name)
-        return response
+        doc = get_country_code(name)
+        if doc ==None:
+           response='No Data Found'
+        else:
+           response=doc['code']
+        return { name : response}
 
 
 class CountryName(Resource) :
     def get(self, code) :
-        response = get_country_name(code)
-        return response
+        doc = get_country_name(code)
+        if doc ==None:
+           response="No Data Found"
+        else:
+           response=doc['name']
+        return { code : response }
 
 
 class Health(Resource) :
