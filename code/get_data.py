@@ -9,7 +9,8 @@ def dataApiStatus():
     res = requests.get(URL)
     return res
 
-def get_data(db):
+def get_data():
+    db = TinyDB('data.json')
     res=dataApiStatus()
     result = res.json()
     for i in result['data'].items() :

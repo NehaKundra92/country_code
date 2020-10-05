@@ -3,21 +3,24 @@ import flask
 from tinydb import TinyDB, Query
 import get_data
 
-db = TinyDB('data.json')
-get_data.get_data(db)
-table=db.table('_default', cache_size=None)
+## Import data
+get_data.get_data()
 
+def db_initiation():
+   db = TinyDB('data.json')
+   table = db.table('_default', cache_size=None)
+   return db
 
 ## DB lookup
 def get_country_name(code) :
-    db = TinyDB('data.json')
+    db = db_initiation()
     country = Query()
     doc = db.get(country['code'] == code)
     return doc
 
 
 def get_country_code(name) :
-    db = TinyDB('data.json')
+    db = db_initiation()
     country = Query()
     doc = db.get(country['name'] == name)
     return doc
